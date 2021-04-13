@@ -1,0 +1,79 @@
+<html style="height: 100%">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/ui.css') }}">
+
+        <title>CINFORM | Collaborative Information</title>
+    </head>
+<body style="height: 100%">
+
+<div class = "toggle" onclick="toggleMenu()">
+</div>
+
+<div class = "navigation">
+    <ul>
+        <br />
+        <!-- <img src='{{ url_for('static', filename='cinform_logo.png') }}' width="50mm" height="50mm" style="margin-left:5px;"> -->
+        <img src='{{ url_for('static', filename='cinform_logo_transparent.png') }}' width="193.44mm" height="36.09cm" style="margin-left:15px;">
+        <br />
+        <hr />
+        <li>
+            <a href="#" onclick="tutorial()">
+                <span class="icon"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                <span class="title">How to Use</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url_for('articles') }}">
+                <span class="icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+                <span class="title">Articles</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url_for('about') }}">
+                <span class="icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <span class="title">About Us</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url_for('contact_us') }}">
+                <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                <span class="title">Contact Us</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="draggable" id="draggable">
+<div class = "draggableheader" id = "draggableheader" style="z-index: -1;">Inspector Window</div>
+    <div class="content" style="z-index: 1">
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <a class="text-muted">Click on the map.</a>
+  </div>
+</div>
+    </div>
+</div>
+
+<div>
+    <div></div>
+</div>
+
+<div id="googleMap" style="width:97%;height:100%;float: right;"></div>
+</body>
+
+<script src= "{{ url_for('static',filename='scripts/main.js') }}"></script>
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbTAtv9hnUhV6zL72oFdvpasLcAHROyac&callback=myMap"></script>
+
+</html>

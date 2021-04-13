@@ -1,0 +1,162 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.draggable {
+    position: absolute;
+    border-radius: 10px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+    overflow-y: auto;
+    top : 40vh;
+    left: 50vw;
+}
+
+.data_class {
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: black;
+}
+.navigation{
+    position: fixed;
+    width: 3%;
+    min-width: 60px;
+    height: 100%;
+    background: #121833;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1;
+}
+.navigation:hover,
+.navigation.active{
+    width: 200px;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   
+    z-index: 1;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.navigation ul li:hover{
+    background: #3c3c3d;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon .fa{
+    font-size: 24px;
+    margin-top: 20px;
+}
+.navigation ul li a:hover .icon .fa{
+    color: #a2cdde;
+}
+.navigation ul li a .title{
+    position: relative;
+    margin-top: 5px;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+
+
+.toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #121833;
+    cursor: pointer;
+    z-index: 1;
+}
+.toggle.active{
+    background: #959596;
+}
+.toggle::before{
+    content: '\f0c9';
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+.toggle.active:before{
+    content: '\f00d';
+}
+
+hr{
+    background-color: #fff;
+}
+
+
+@media (max-width: 767px){
+    .navigation{
+        left: -60px;
+    }
+    .navigation{
+        left: 0px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px){
+    .navigation{
+        left: 0px;
+        width: 5%;
+    }
+}
